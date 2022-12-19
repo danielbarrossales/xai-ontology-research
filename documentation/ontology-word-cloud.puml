@@ -1,0 +1,23 @@
+@startmindmap
++ Caso de Uso
+++ Feedback
++++ Opções
++++ Escolha
++++ Comentário
+++ Antecedente do usuário
+++ Sistema IA
++++ Tarefa
+++++ Contexto
++++++ Risco
++++++ Pressão Temporal
++++ Modelo
++++ Entrada
+++++ Tipo
++++ Sugestão
+++++ Confiança
+++++ Explicação
++++++ Método
++++++ Objetivo
++++++ Estratégia
++++++ Complexidade
+@endmindmap

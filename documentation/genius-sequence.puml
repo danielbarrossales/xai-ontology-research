@@ -1,0 +1,27 @@
+@startuml
+skinparam actorStyle awesome
+
+actor "Input/Output" as Input
+
+actor Librarian
+actor Genius
+actor Actor
+actor "Actor Student" as Student
+
+Input -> Librarian: Sends data for labeling
+Librarian -> Genius: Sends data for labeling
+Librarian <- Genius: Return label for data
+
+Librarian -> Actor: Sends data and label
+Actor -> Librarian: Requests neighbors from data\nused on Genius Training.
+Librarian -> Actor: Returns neighbors data\nused on Genius Training.
+
+Actor -> Actor: Learn to mimic Genius\nBehaviour using neighbors\ndata.
+Actor -> Actor: Start to label data
+Actor --> Student: Communicates Neuron Activation\nData
+
+Actor -> Student: Signal labeling end
+
+Student -> Librarian: Send explanation for data
+Librarian -> Input: Send label and explanation
+@enduml

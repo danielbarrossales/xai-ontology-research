@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#"
+     xml:base="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#confidence -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#confidence">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#employs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#employs">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#explains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#explains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#given -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#given">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSugestion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSugestion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSystem"/>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Amateur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Amateur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserBackgroundType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Classification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Classification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TaskGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Clustering -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Clustering">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TaskGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#DomainExpert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#DomainExpert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserBackgroundType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ExampleBased -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ExampleBased">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#explains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Output"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ExplanationGoal"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ExplanationGoal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ExplanationGoal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#FeatureAttribution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#FeatureAttribution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Feedback -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Feedback">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSugestion"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserBackgroundType"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserChoice"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Goal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Goal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ModelAgnostic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ModelAgnostic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#PostHoc"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ModelSpecific"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ModelSpecific -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ModelSpecific">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#PostHoc"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#MultipleOptionsTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#MultipleOptionsTask">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Output -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Output"/>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#PostHoc -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#PostHoc">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TransparentByDesign"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Regression -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Regression">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TaskGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Risky -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Risky">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Safe"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#RulesBased -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#RulesBased">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Safe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Safe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#has"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TaskGoal"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TaskGoal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TaskGoal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TransparentByDesign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#TransparentByDesign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UseCase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UseCase">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#employs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSystem"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#employs"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserBackgroundType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserBackgroundType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserChoice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserChoice">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#given"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSugestion"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#given"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#MultipleOptionsTask"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSugestion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSystem"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Feedback"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Goal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Output"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UseCase"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSugestion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSystem"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Feedback"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Goal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Output"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UseCase"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserBackgroundType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSugestion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSystem"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Feedback"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Goal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Output"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UseCase"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserBackgroundType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UserChoice"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#AiSystem"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Explanation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Feedback"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Goal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Output"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Task"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#UseCase"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Classification"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Clustering"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#Regression"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#ExampleBased"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#FeatureAttribution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/danie/ontologies/2022/11/untitled-ontology-9#RulesBased"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

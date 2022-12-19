@@ -1,0 +1,930 @@
+@prefix : <https://ontology.tno.nl/explainability#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://ontology.tno.nl/explainability> .
+
+<https://ontology.tno.nl/explainability> rdf:type owl:Ontology ;
+                                          owl:imports <file:///C:/Users/bouterca/TBCSEWorkspace/TopBraid/SKOS/skos-core.ttl.tbc> ;
+                                          dcterms:contributor <https://www.linkedin.com/in/ajay-adhikari/> ,
+                                                              <https://www.linkedin.com/in/ejwenink/> ;
+                                          dcterms:creator <https://www.linkedin.com/in/bouterca/> ;
+                                          dcterms:description """This ontology describes the various AI systems, use cases, and XAI algorithms through a collection of taxonomies. It is intended to be used in the ASCENT (Ai Sys-
+tem use Case Explanation oNTology) such that users can insert their use cases and AI systems. The ASCENT system should then return an appropriate XAI algorithm given the describes situation. Therefore this ontology contains, next to the conceptual model, instantiated data for several XAI algorithms, such as LIME.""" ;
+                                          dcterms:issued "2022-01-12" ;
+                                          dcterms:publisher <https://www.tno.nl> ;
+                                          dcterms:title "Explainable AI Ontology" ;
+                                          owl:versionInfo "Created with TopBraid Composer" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://ontology.tno.nl/explainability#associationWith
+:associationWith rdf:type owl:ObjectProperty ;
+                 rdfs:domain :ExplanationAlgorithm ;
+                 rdfs:comment "The relation between this explanation service and a particular property may have been researched, which may have lead to a result whether this explanation service well suited for the property in the range of this property. The result may also be that the explanation service is not suited or that the result is neutral. It may also be explicitly assigned as a relation that is yet uninvestigated." ;
+                 rdfs:label "association with" ;
+                 skos:prefLabel "association with" .
+
+
+###  https://ontology.tno.nl/explainability#employs
+:employs rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isEmployedIn ;
+         rdfs:domain :UseCase ;
+         rdfs:range :AISystem ;
+         rdfs:label "employs" .
+
+
+###  https://ontology.tno.nl/explainability#explainsSystem
+:explainsSystem rdf:type owl:ObjectProperty ;
+                owl:inverseOf :providesExplanationService ;
+                rdfs:domain :ExplanationAlgorithm ;
+                rdfs:range :AISystem ;
+                rdfs:label "explains system" .
+
+
+###  https://ontology.tno.nl/explainability#hasExplanandumType
+:hasExplanandumType rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ExplanationAlgorithm ;
+                    rdfs:range :ExplanandumType ;
+                    rdfs:label "has explanandum type" ;
+                    skos:prefLabel "has explanandum type" .
+
+
+###  https://ontology.tno.nl/explainability#hasExplanationGoal
+:hasExplanationGoal rdf:type owl:ObjectProperty ;
+                    rdfs:domain :UseCase ;
+                    rdfs:range :ExplanationGoal ;
+                    rdfs:label "has explanation goal" ;
+                    skos:prefLabel "has explanation goal" .
+
+
+###  https://ontology.tno.nl/explainability#hasExplanationType
+:hasExplanationType rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ExplanationAlgorithm ;
+                    rdfs:range :ExplanationType ;
+                    rdfs:label "has explanation type" ;
+                    skos:prefLabel "has explanation type" .
+
+
+###  https://ontology.tno.nl/explainability#hasInputData
+:hasInputData rdf:type owl:ObjectProperty ;
+              rdfs:domain :AISystem ;
+              rdfs:range :InputData ;
+              rdfs:label "has input data" ;
+              skos:prefLabel "has input data" .
+
+
+###  https://ontology.tno.nl/explainability#hasManner
+:hasManner rdf:type owl:ObjectProperty ;
+           rdfs:domain :ExplanationAlgorithm ;
+           rdfs:range :Manner ;
+           rdfs:label "has manner" ;
+           skos:prefLabel "has manner" .
+
+
+###  https://ontology.tno.nl/explainability#hasModelType
+:hasModelType rdf:type owl:ObjectProperty ;
+              rdfs:domain :AISystem ;
+              rdfs:range :ModelType ;
+              rdfs:label "has model type" ;
+              skos:prefLabel "has model type" .
+
+
+###  https://ontology.tno.nl/explainability#hasRiskLevel
+:hasRiskLevel rdf:type owl:ObjectProperty ;
+              rdfs:domain :TaskContext ;
+              rdfs:range :RiskLevel ;
+              rdfs:label "has risk level" ;
+              skos:prefLabel "has risk level" .
+
+
+###  https://ontology.tno.nl/explainability#hasStrategyType
+:hasStrategyType rdf:type owl:ObjectProperty ;
+                 rdfs:domain :ExplanationAlgorithm ;
+                 rdfs:range :StrategyType ;
+                 rdfs:label "has strategy type" ;
+                 skos:prefLabel "has strategy type" .
+
+
+###  https://ontology.tno.nl/explainability#hasTaskContext
+:hasTaskContext rdf:type owl:ObjectProperty ;
+                rdfs:domain :UseCase ;
+                rdfs:range :TaskContext ;
+                rdfs:label "has task context" ;
+                skos:prefLabel "has task context" .
+
+
+###  https://ontology.tno.nl/explainability#hasTaskType
+:hasTaskType rdf:type owl:ObjectProperty ;
+             rdfs:domain :AISystem ;
+             rdfs:range :TaskType ;
+             rdfs:label "has task type" ;
+             skos:prefLabel "has task type" .
+
+
+###  https://ontology.tno.nl/explainability#hasTimePressureLevel
+:hasTimePressureLevel rdf:type owl:ObjectProperty ;
+                      rdfs:domain :TaskContext ;
+                      rdfs:range :TimePressureLevel ;
+                      rdfs:label "has time pressure level" ;
+                      skos:prefLabel "has time pressure level" .
+
+
+###  https://ontology.tno.nl/explainability#inconclusiveAssociationWith
+:inconclusiveAssociationWith rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :associationWith ;
+                             rdfs:label "has inconclusive correlation with" ;
+                             skos:prefLabel "has inconclusive correlation with" .
+
+
+###  https://ontology.tno.nl/explainability#involvesUserBackground
+:involvesUserBackground rdf:type owl:ObjectProperty ;
+                        rdfs:domain :UseCase ;
+                        rdfs:range :UserBackgroundType ;
+                        rdfs:label "involves user background" ;
+                        skos:prefLabel "involves user background" .
+
+
+###  https://ontology.tno.nl/explainability#isEmployedIn
+:isEmployedIn rdf:type owl:ObjectProperty ;
+              rdfs:domain :AISystem ;
+              rdfs:range :UseCase ;
+              rdfs:label "is employed in" .
+
+
+###  https://ontology.tno.nl/explainability#learnsFrom
+:learnsFrom rdf:type owl:ObjectProperty ;
+            rdfs:domain :AISystem ;
+            rdfs:range :InputData ;
+            rdfs:label "learns from" ;
+            skos:prefLabel "learns from" .
+
+
+###  https://ontology.tno.nl/explainability#negativeAssociationWith
+:negativeAssociationWith rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :associationWith ;
+                         rdfs:label "has negative correlation with" ;
+                         skos:prefLabel "has negative correlation with" .
+
+
+###  https://ontology.tno.nl/explainability#positiveAssociationWith
+:positiveAssociationWith rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :associationWith ;
+                         rdfs:label "has positive correlation with" ;
+                         skos:prefLabel "has positive correlation with" .
+
+
+###  https://ontology.tno.nl/explainability#providesExplanationService
+:providesExplanationService rdf:type owl:ObjectProperty ;
+                            rdfs:domain :AISystem ;
+                            rdfs:range :ExplanationAlgorithm ;
+                            rdfs:label "provides explanation service" .
+
+
+###  https://ontology.tno.nl/explainability#unknownAssociationWith
+:unknownAssociationWith rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :associationWith ;
+                        rdfs:label "unknown correlation with" ;
+                        skos:prefLabel "unknown correlation with" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  https://ontology.tno.nl/explainability#AISystem
+:AISystem rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:comment "An AI model that has been or will be trained on data following a particular algorithm." ;
+          rdfs:label "AI System" .
+
+
+###  https://ontology.tno.nl/explainability#AiFunctioningExplanandum
+:AiFunctioningExplanandum rdf:type owl:Class ;
+                          rdfs:subClassOf :ExplanandumType ;
+                          rdfs:label "Ai functioning explanandum" ;
+                          skos:prefLabel "Ai functioning explanandum" .
+
+
+###  https://ontology.tno.nl/explainability#DataExplanandum
+:DataExplanandum rdf:type owl:Class ;
+                 rdfs:subClassOf :ExplanandumType ;
+                 rdfs:label "Data explanandum" ;
+                 skos:prefLabel "Data explanandum" .
+
+
+###  https://ontology.tno.nl/explainability#DecisionBoundary
+:DecisionBoundary rdf:type owl:Class ;
+                  rdfs:subClassOf :AiFunctioningExplanandum ;
+                  rdfs:label "Decision boundary" ;
+                  skos:prefLabel "Decision boundary" .
+
+
+###  https://ontology.tno.nl/explainability#DomainExpert
+:DomainExpert rdf:type owl:Class ;
+              rdfs:subClassOf :Expert ;
+              rdfs:label "Domain expert" ;
+              skos:prefLabel "Domain expert" .
+
+
+###  https://ontology.tno.nl/explainability#ExampleBased
+:ExampleBased rdf:type owl:Class ;
+              rdfs:subClassOf :ExplanationType ;
+              rdfs:label "Example based" ;
+              skos:prefLabel "Example based" .
+
+
+###  https://ontology.tno.nl/explainability#Expert
+:Expert rdf:type owl:Class ;
+        rdfs:subClassOf :UserBackgroundType ;
+        rdfs:label "Expert" ;
+        skos:prefLabel "Expert" .
+
+
+###  https://ontology.tno.nl/explainability#ExplanandumType
+:ExplanandumType rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing ;
+                 rdfs:label "Explanandum type" ;
+                 skos:prefLabel "Explanandum type" .
+
+
+###  https://ontology.tno.nl/explainability#ExplanationAlgorithm
+:ExplanationAlgorithm rdf:type owl:Class ;
+                      rdfs:subClassOf owl:Thing ;
+                      rdfs:comment "An explanation algorithm is a particular XAI algorithm that provides an explanation the AI model it's associated to." ;
+                      rdfs:label "Explanation algorithm" .
+
+
+###  https://ontology.tno.nl/explainability#ExplanationGoal
+:ExplanationGoal rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing ;
+                 rdfs:label "Explanation goal" ;
+                 skos:prefLabel "Explanation goal" .
+
+
+###  https://ontology.tno.nl/explainability#ExplanationType
+:ExplanationType rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing ;
+                 rdfs:label "Explanation type" ;
+                 skos:prefLabel "Explanation type" .
+
+
+###  https://ontology.tno.nl/explainability#FeatureAttribution
+:FeatureAttribution rdf:type owl:Class ;
+                    rdfs:subClassOf :ExplanationType ;
+                    rdfs:label "Feature attribution" ;
+                    skos:prefLabel "Feature attribution" .
+
+
+###  https://ontology.tno.nl/explainability#InputData
+:InputData rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:label "Input data" ;
+           skos:prefLabel "Input data" .
+
+
+###  https://ontology.tno.nl/explainability#Interactivity
+:Interactivity rdf:type owl:Class ;
+               rdfs:subClassOf :Manner ;
+               rdfs:label "Interactivity" ;
+               skos:prefLabel "Interactivity" .
+
+
+###  https://ontology.tno.nl/explainability#Manner
+:Manner rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing ;
+        rdfs:label "Manner" ;
+        skos:prefLabel "Manner" .
+
+
+###  https://ontology.tno.nl/explainability#Modality
+:Modality rdf:type owl:Class ;
+          rdfs:subClassOf :Manner ;
+          rdfs:label "Modality" ;
+          skos:prefLabel "Modality" .
+
+
+###  https://ontology.tno.nl/explainability#ModelAgnostic
+:ModelAgnostic rdf:type owl:Class ;
+               rdfs:subClassOf :PostHoc ;
+               rdfs:label "Model agnostic" ;
+               skos:prefLabel "Model agnostic" .
+
+
+###  https://ontology.tno.nl/explainability#ModelDevelopmentExplanandum
+:ModelDevelopmentExplanandum rdf:type owl:Class ;
+                             rdfs:subClassOf :ExplanandumType ;
+                             rdfs:label "Model development explanandum" ;
+                             skos:prefLabel "Model development explanandum" .
+
+
+###  https://ontology.tno.nl/explainability#ModelSpecific
+:ModelSpecific rdf:type owl:Class ;
+               rdfs:subClassOf :PostHoc ;
+               rdfs:label "Model specific" ;
+               skos:prefLabel "Model specific" .
+
+
+###  https://ontology.tno.nl/explainability#ModelType
+:ModelType rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:label "Model type" ;
+           skos:prefLabel "Model type" .
+
+
+###  https://ontology.tno.nl/explainability#PostHoc
+:PostHoc rdf:type owl:Class ;
+         rdfs:subClassOf :StrategyType ;
+         rdfs:label "Post hoc" ;
+         skos:prefLabel "Post hoc" .
+
+
+###  https://ontology.tno.nl/explainability#RiskLevel
+:RiskLevel rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:label "Risk level" ;
+           skos:prefLabel "Risk level" .
+
+
+###  https://ontology.tno.nl/explainability#RulesBased
+:RulesBased rdf:type owl:Class ;
+            rdfs:subClassOf :ExplanationType ;
+            rdfs:label "Rules based" ;
+            skos:prefLabel "Rules based" .
+
+
+###  https://ontology.tno.nl/explainability#StrategyType
+:StrategyType rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing ;
+              rdfs:label "Strategy type" ;
+              skos:prefLabel "Strategy type" .
+
+
+###  https://ontology.tno.nl/explainability#TaskContext
+:TaskContext rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             rdfs:label "Task context" ;
+             skos:prefLabel "Task context" .
+
+
+###  https://ontology.tno.nl/explainability#TaskType
+:TaskType rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:label "Task type" ;
+          skos:prefLabel "Task type" .
+
+
+###  https://ontology.tno.nl/explainability#TimePressureLevel
+:TimePressureLevel rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing ;
+                   rdfs:label "Time pressure level" ;
+                   skos:prefLabel "Time pressure level" .
+
+
+###  https://ontology.tno.nl/explainability#TransparentByDesign
+:TransparentByDesign rdf:type owl:Class ;
+                     rdfs:subClassOf :StrategyType ;
+                     rdfs:label "Transparent by design" ;
+                     skos:prefLabel "Transparent by design" .
+
+
+###  https://ontology.tno.nl/explainability#UseCase
+:UseCase rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:comment "A person or organisation that may employ a particular AI model." ;
+         rdfs:label "Use case" .
+
+
+###  https://ontology.tno.nl/explainability#UserBackgroundType
+:UserBackgroundType rdf:type owl:Class ;
+                    rdfs:subClassOf owl:Thing ;
+                    rdfs:label "User background type" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://ontology.tno.nl/explainability#AIExpert
+:AIExpert rdf:type owl:NamedIndividual ,
+                   :Expert ;
+          rdfs:label "AIExpert" ;
+          skos:prefLabel "AIExpert" .
+
+
+###  https://ontology.tno.nl/explainability#ANNSpecificStrategy
+:ANNSpecificStrategy rdf:type owl:NamedIndividual ,
+                              :ModelSpecific ;
+                     rdfs:label "ANNSpecific strategy" ;
+                     skos:prefLabel "ANNSpecific strategy" .
+
+
+###  https://ontology.tno.nl/explainability#Audio
+:Audio rdf:type owl:NamedIndividual ,
+                :InputData ;
+       rdfs:label "Audio" ;
+       skos:prefLabel "Audio" .
+
+
+###  https://ontology.tno.nl/explainability#Audit
+:Audit rdf:type owl:NamedIndividual ,
+                :ExplanationGoal ;
+       rdfs:label "Audit" ;
+       skos:prefLabel "Audit" .
+
+
+###  https://ontology.tno.nl/explainability#Auditory
+:Auditory rdf:type owl:NamedIndividual ,
+                   :Modality ;
+          owl:sameAs :Speech ;
+          rdfs:label "Auditory" ;
+          skos:prefLabel "Auditory" .
+
+
+###  https://ontology.tno.nl/explainability#CalibrateTrust
+:CalibrateTrust rdf:type owl:NamedIndividual ,
+                         :ExplanationGoal ;
+                rdfs:label "Calibrate trust" ;
+                skos:prefLabel "Calibrate trust" .
+
+
+###  https://ontology.tno.nl/explainability#Classification
+:Classification rdf:type owl:NamedIndividual ,
+                         :TaskType ;
+                rdfs:label "Classification" ;
+                skos:prefLabel "Classification" .
+
+
+###  https://ontology.tno.nl/explainability#Clustering
+:Clustering rdf:type owl:NamedIndividual ,
+                     :TaskType ;
+            rdfs:label "Clustering" ;
+            skos:prefLabel "Clustering" .
+
+
+###  https://ontology.tno.nl/explainability#Concept_1
+:Concept_1 rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           rdfs:label "Concept 1" ;
+           skos:prefLabel "Concept 1" .
+
+
+###  https://ontology.tno.nl/explainability#Concept_2
+:Concept_2 rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           rdfs:label "Concept 2" ;
+           skos:prefLabel "Concept 2" .
+
+
+###  https://ontology.tno.nl/explainability#Concept_3
+:Concept_3 rdf:type owl:NamedIndividual ,
+                    skos:Concept ;
+           rdfs:label "Concept 3" ;
+           skos:prefLabel "Concept 3" .
+
+
+###  https://ontology.tno.nl/explainability#Confidence
+:Confidence rdf:type owl:NamedIndividual ,
+                     :AiFunctioningExplanandum ;
+            rdfs:label "Confidence" ;
+            skos:prefLabel "Confidence" .
+
+
+###  https://ontology.tno.nl/explainability#Consultant
+:Consultant rdf:type owl:NamedIndividual ,
+                     :DomainExpert ;
+            rdfs:label "Consultant" ;
+            skos:prefLabel "Consultant" .
+
+
+###  https://ontology.tno.nl/explainability#Contest
+:Contest rdf:type owl:NamedIndividual ,
+                  :ExplanationGoal ;
+         rdfs:label "Contest" ;
+         skos:prefLabel "Contest" .
+
+
+###  https://ontology.tno.nl/explainability#CounterfactualExplanation
+:CounterfactualExplanation rdf:type owl:NamedIndividual ,
+                                    :ExampleBased ;
+                           rdfs:label "Counterfactual explanation" ;
+                           skos:prefLabel "Counterfactual explanation" .
+
+
+###  https://ontology.tno.nl/explainability#DataCollection
+:DataCollection rdf:type owl:NamedIndividual ,
+                         :DataExplanandum ;
+                rdfs:label "Data collection" ;
+                skos:prefLabel "Data collection" .
+
+
+###  https://ontology.tno.nl/explainability#DataStatistics
+:DataStatistics rdf:type owl:NamedIndividual ,
+                         :DataExplanandum ;
+                rdfs:label "Data statistics" ;
+                skos:prefLabel "Data statistics" .
+
+
+###  https://ontology.tno.nl/explainability#DecisionSupport
+:DecisionSupport rdf:type owl:NamedIndividual ,
+                          :ExplanationGoal ;
+                 rdfs:label "Decision support" ;
+                 skos:prefLabel "Decision support" .
+
+
+###  https://ontology.tno.nl/explainability#DesignPhase
+:DesignPhase rdf:type owl:NamedIndividual ,
+                      :ModelDevelopmentExplanandum ;
+             rdfs:label "Design phase" ;
+             skos:prefLabel "Design phase" .
+
+
+###  https://ontology.tno.nl/explainability#DimensionalityReduction
+:DimensionalityReduction rdf:type owl:NamedIndividual ,
+                                  :TaskType ;
+                         rdfs:label "Dimensionality reduction" ;
+                         skos:prefLabel "Dimensionality reduction" .
+
+
+###  https://ontology.tno.nl/explainability#Discover
+:Discover rdf:type owl:NamedIndividual ,
+                   :ExplanationGoal ;
+          rdfs:label "Discover" ;
+          skos:prefLabel "Discover" .
+
+
+###  https://ontology.tno.nl/explainability#EvaluationPhase
+:EvaluationPhase rdf:type owl:NamedIndividual ,
+                          :ModelDevelopmentExplanandum ;
+                 rdfs:label "Evaluation phase" ;
+                 skos:prefLabel "Evaluation phase" .
+
+
+###  https://ontology.tno.nl/explainability#FeatureAttributionExplanation
+:FeatureAttributionExplanation rdf:type owl:NamedIndividual ,
+                                        :FeatureAttribution ;
+                               rdfs:label "Feature attribution explanation" ;
+                               skos:prefLabel "Feature attribution explanation" .
+
+
+###  https://ontology.tno.nl/explainability#GlobalDecisionBoundary
+:GlobalDecisionBoundary rdf:type owl:NamedIndividual ,
+                                 :DecisionBoundary ;
+                        rdfs:label "Global decision boundary" ;
+                        skos:prefLabel "Global decision boundary" .
+
+
+###  https://ontology.tno.nl/explainability#Graph
+:Graph rdf:type owl:NamedIndividual ,
+                :InputData ;
+       rdfs:label "Graph" ;
+       skos:prefLabel "Graph" .
+
+
+###  https://ontology.tno.nl/explainability#HighRisk
+:HighRisk rdf:type owl:NamedIndividual ,
+                   :RiskLevel ;
+          rdfs:label "High risk" ;
+          skos:prefLabel "High risk" .
+
+
+###  https://ontology.tno.nl/explainability#HighTimePressure
+:HighTimePressure rdf:type owl:NamedIndividual ,
+                           :TimePressureLevel ;
+                  rdfs:label "High" ;
+                  skos:prefLabel "High" .
+
+
+###  https://ontology.tno.nl/explainability#Image
+:Image rdf:type owl:NamedIndividual ,
+                :InputData ;
+       rdfs:label "Image" ;
+       skos:prefLabel "Image" .
+
+
+###  https://ontology.tno.nl/explainability#Improve
+:Improve rdf:type owl:NamedIndividual ,
+                  :ExplanationGoal ;
+         rdfs:label "Improve" ;
+         skos:prefLabel "Improve" .
+
+
+###  https://ontology.tno.nl/explainability#Interactive
+:Interactive rdf:type owl:NamedIndividual ,
+                      :Interactivity ;
+             rdfs:label "Interactive" ;
+             skos:prefLabel "Interactive" .
+
+
+###  https://ontology.tno.nl/explainability#Justify
+:Justify rdf:type owl:NamedIndividual ,
+                  :ExplanationGoal ;
+         rdfs:label "Justify" ;
+         skos:prefLabel "Justify" .
+
+
+###  https://ontology.tno.nl/explainability#LIMEExplanationAlgorithm
+:LIMEExplanationAlgorithm rdf:type owl:NamedIndividual ,
+                                   :ExplanationAlgorithm ;
+                          :hasExplanandumType :LocalDecisionBoundary ;
+                          :hasExplanationType :FeatureAttributionExplanation ;
+                          :hasManner :Static ,
+                                     :Visual ;
+                          :hasStrategyType :ModelAgnosticStrategy ;
+                          :negativeAssociationWith :Audio ,
+                                                   :CalibrateTrust ,
+                                                   :Clustering ,
+                                                   :DimensionalityReduction ,
+                                                   :Graph ,
+                                                   :HighRisk ,
+                                                   :ReinforcementLearning ,
+                                                   :Unsupervised ,
+                                                   :Video ;
+                          :positiveAssociationWith :Classification ,
+                                                   :Consultant ,
+                                                   :HighTimePressure ,
+                                                   :Image ,
+                                                   :LowRisk ,
+                                                   :LowTimePressure ,
+                                                   :Regression ,
+                                                   :Researcher ,
+                                                   :Supervised ,
+                                                   :Tabular ,
+                                                   :Text ;
+                          :unknownAssociationWith :Audit ,
+                                                  :Contest ,
+                                                  :DecisionSupport ,
+                                                  :Discover ,
+                                                  :Improve ,
+                                                  :Justify ,
+                                                  :Persuade ;
+                          rdfs:label "LIMEExplanation algorithm" ;
+                          skos:prefLabel "LIMEExplanation algorithm" .
+
+
+###  https://ontology.tno.nl/explainability#LocalDecisionBoundary
+:LocalDecisionBoundary rdf:type owl:NamedIndividual ,
+                                :DecisionBoundary ;
+                       rdfs:label "Local decision boundary" ;
+                       skos:prefLabel "Local decision boundary" .
+
+
+###  https://ontology.tno.nl/explainability#LowRisk
+:LowRisk rdf:type owl:NamedIndividual ,
+                  :RiskLevel ;
+         rdfs:label "Low risk" ;
+         skos:prefLabel "Low risk" .
+
+
+###  https://ontology.tno.nl/explainability#LowTimePressure
+:LowTimePressure rdf:type owl:NamedIndividual ,
+                          :TimePressureLevel ;
+                 rdfs:label "Low" ;
+                 skos:prefLabel "Low" .
+
+
+###  https://ontology.tno.nl/explainability#ModelAgnosticStrategy
+:ModelAgnosticStrategy rdf:type owl:NamedIndividual ,
+                                :ModelAgnostic ;
+                       rdfs:label "Model agnostic strategy" ;
+                       skos:prefLabel "Model agnostic strategy" .
+
+
+###  https://ontology.tno.nl/explainability#ModelSpecificStrategy
+:ModelSpecificStrategy rdf:type owl:NamedIndividual ,
+                                :ModelSpecific ;
+                       rdfs:label "Model specific strategy" ;
+                       skos:prefLabel "Model specific strategy" .
+
+
+###  https://ontology.tno.nl/explainability#Persuade
+:Persuade rdf:type owl:NamedIndividual ,
+                   :ExplanationGoal ;
+          rdfs:label "Persuade" ;
+          skos:prefLabel "Persuade" .
+
+
+###  https://ontology.tno.nl/explainability#PostHocStrategy
+:PostHocStrategy rdf:type owl:NamedIndividual ,
+                          :PostHoc ;
+                 rdfs:label "Post hoc strategy" ;
+                 skos:prefLabel "Post hoc strategy" .
+
+
+###  https://ontology.tno.nl/explainability#PreprocessingPhase
+:PreprocessingPhase rdf:type owl:NamedIndividual ,
+                             :ModelDevelopmentExplanandum ;
+                    rdfs:label "Preprocessing" ;
+                    skos:prefLabel "Preprocessing" .
+
+
+###  https://ontology.tno.nl/explainability#PrototypicalExplanation
+:PrototypicalExplanation rdf:type owl:NamedIndividual ,
+                                  :ExampleBased ;
+                         rdfs:label "Prototypical explanation" ;
+                         skos:prefLabel "Prototypical explanation" .
+
+
+###  https://ontology.tno.nl/explainability#Regression
+:Regression rdf:type owl:NamedIndividual ,
+                     :TaskType ;
+            rdfs:label "Regression" ;
+            skos:prefLabel "Regression" .
+
+
+###  https://ontology.tno.nl/explainability#ReinforcementLearning
+:ReinforcementLearning rdf:type owl:NamedIndividual ,
+                                :ModelType ;
+                       rdfs:label "Reinforcement learning" ;
+                       skos:prefLabel "Reinforcement learning" .
+
+
+###  https://ontology.tno.nl/explainability#Researcher
+:Researcher rdf:type owl:NamedIndividual ,
+                     :DomainExpert ;
+            rdfs:label "Researcher" ;
+            skos:prefLabel "Researcher" .
+
+
+###  https://ontology.tno.nl/explainability#RulesBasedExplanation
+:RulesBasedExplanation rdf:type owl:NamedIndividual ,
+                                :RulesBased ;
+                       rdfs:label "Rules based explanation" ;
+                       skos:prefLabel "Rules based explanation" .
+
+
+###  https://ontology.tno.nl/explainability#SimilarInstancesExplanation
+:SimilarInstancesExplanation rdf:type owl:NamedIndividual ,
+                                      :ExampleBased ;
+                             :associationWith :Consultant ;
+                             rdfs:label "Similar instances explanation" ;
+                             skos:prefLabel "Similar instances explanation" .
+
+
+###  https://ontology.tno.nl/explainability#Smell
+:Smell rdf:type owl:NamedIndividual ,
+                :Modality ;
+       rdfs:label "Smell" ;
+       skos:prefLabel "Smell" .
+
+
+###  https://ontology.tno.nl/explainability#Speech
+:Speech rdf:type owl:NamedIndividual ,
+                 :Modality ;
+        rdfs:label "Speech" ;
+        skos:prefLabel "Speech" .
+
+
+###  https://ontology.tno.nl/explainability#Static
+:Static rdf:type owl:NamedIndividual ,
+                 :Interactivity ;
+        rdfs:label "Static" ;
+        skos:prefLabel "Static" .
+
+
+###  https://ontology.tno.nl/explainability#Subject
+:Subject rdf:type owl:NamedIndividual ,
+                  :UserBackgroundType ;
+         rdfs:label "Subject" ;
+         skos:prefLabel "Subject" .
+
+
+###  https://ontology.tno.nl/explainability#Supervised
+:Supervised rdf:type owl:NamedIndividual ,
+                     :ModelType ;
+            rdfs:label "Supervised" ;
+            skos:prefLabel "Supervised" .
+
+
+###  https://ontology.tno.nl/explainability#Tabular
+:Tabular rdf:type owl:NamedIndividual ,
+                  :InputData ;
+         rdfs:label "Tabular" ;
+         skos:prefLabel "Tabular" .
+
+
+###  https://ontology.tno.nl/explainability#Tactile
+:Tactile rdf:type owl:NamedIndividual ,
+                  :Modality ;
+         rdfs:label "Tactile" ;
+         skos:prefLabel "Tactile" .
+
+
+###  https://ontology.tno.nl/explainability#Taste
+:Taste rdf:type owl:NamedIndividual ,
+                :Modality ;
+       rdfs:label "Taste" ;
+       skos:prefLabel "Taste" .
+
+
+###  https://ontology.tno.nl/explainability#Text
+:Text rdf:type owl:NamedIndividual ,
+               :InputData ;
+      rdfs:label "Text" ;
+      skos:prefLabel "Text" .
+
+
+###  https://ontology.tno.nl/explainability#TrainingPhase
+:TrainingPhase rdf:type owl:NamedIndividual ,
+                        :ModelDevelopmentExplanandum ;
+               rdfs:label "Training phase" ;
+               skos:prefLabel "Training phase" .
+
+
+###  https://ontology.tno.nl/explainability#TransparentByDesignStrategy
+:TransparentByDesignStrategy rdf:type owl:NamedIndividual ,
+                                      :TransparentByDesign ;
+                             rdfs:label "Transparent by design strategy" ;
+                             skos:prefLabel "Transparent by design strategy" .
+
+
+###  https://ontology.tno.nl/explainability#Unsupervised
+:Unsupervised rdf:type owl:NamedIndividual ,
+                       :ModelType ;
+              rdfs:label "Unsupervised" ;
+              skos:prefLabel "Unsupervised" .
+
+
+###  https://ontology.tno.nl/explainability#Video
+:Video rdf:type owl:NamedIndividual ,
+                :InputData ;
+       rdfs:label "Video" ;
+       skos:prefLabel "Video" .
+
+
+###  https://ontology.tno.nl/explainability#Visual
+:Visual rdf:type owl:NamedIndividual ,
+                 :Modality ;
+        rdfs:label "Visual" ;
+        skos:prefLabel "Visual" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( skos:Concept
+                :AISystem
+                :ExplanandumType
+                :ExplanationAlgorithm
+                :ExplanationGoal
+                :ExplanationType
+                :InputData
+                :Manner
+                :ModelType
+                :RiskLevel
+                :StrategyType
+                :TaskContext
+                :TaskType
+                :TimePressureLevel
+                :UseCase
+                :UserBackgroundType
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
