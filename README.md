@@ -1,4 +1,4 @@
-# Especificação Ontológica
+# Especificação Ontológica (Work in Progress)
 **Objetivo**: Ontologia sobre feedback de sistemas XAI que deve ser utilizado para auxiliar no processo de coleta e análise de feedback. Esta ontologia pode ser utilizada para orientar a coleta de informações baseada no caso de uso, tipo de dado, tipo de explicação e modelo utilizado no sistema.
 Nível de Formalidade: Semi-Formal
 Representação de Domínio: Ontologia de Tarefa, pois para alcançar o objetivo desta ontologia será necessário modelar conceitos de diferentes domínios.
